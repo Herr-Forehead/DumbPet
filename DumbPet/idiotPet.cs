@@ -12,6 +12,7 @@ public class idiotPet
     public string Name;
     public string choice = Console.ReadLine();
     public string teachWord;
+    public int tick;
 
 
     public void Feed()
@@ -30,7 +31,7 @@ public class idiotPet
         }
     }
 
-    public void Teach()
+    public void Teach(int word)
     {
         if (choice == "Teach")
         {
@@ -42,7 +43,15 @@ public class idiotPet
 
     public void Tick()
     {
-        // igu
+        if (choice == "feed" || choice == "Hi" || choice == "Teach" || choice == "Print stats")
+        {
+            tick += 1;
+            if (tick > 3)
+            {
+                boredom += 20;
+                hunger += 20;
+            }
+        }
     }
 
     public void PrintStats()
