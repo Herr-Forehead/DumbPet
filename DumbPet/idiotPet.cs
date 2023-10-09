@@ -34,6 +34,7 @@ public class idiotPet
     {
         if (choice == "Teach")
         {
+            Console.WriteLine("What word do you want to teach it??");
             teachWord = Console.ReadLine();
             words.Add(teachWord);
         }
@@ -46,7 +47,12 @@ public class idiotPet
 
     public void PrintStats()
     {
-        // uyf
+        if (choice == "Print stats")
+        {
+            Console.WriteLine(hunger);
+            Console.WriteLine(boredom);
+            Console.WriteLine(isAlive);
+        }
     }
 
     public bool getAlive()
@@ -56,6 +62,9 @@ public class idiotPet
 
     private void reduceBoredom()
     {
-        // uyvuyhvf
+        if (choice == "Teach" || choice == "Hi")
+        {
+            boredom -= 10;
+        }
     }
 }
